@@ -1,16 +1,26 @@
 import React from "react";
+import Image from "next/image";
 
-const EventsPerCity = () => {
-    return <div>
-        <h1>Event Page</h1>
-
-        <a href="/event/event1">Event 1</a>
-        <a href="/event/event2">Event 2</a>
-        <a href="/event/event3">Event 3</a>
-        <a href="/event/event4">Event 4</a>
-        <a href="/event/event5">Event 5</a>
-        <a href="/event/event6">Event 6</a>
+const EventsInCity = () => {
+    return (
+    <div>
+        <h1>Events in London</h1>
+        <div>
+            <a href="/events/london/ev1">
+                <img /> <h2>Event 1</h2>
+            </a>
+            <a href="/events/london/ev2">
+                <img /> <h2>Event 2</h2>
+            </a>
+            <a href="/events/london/ev3">
+                <img /> <h2>Event 3</h2>
+            </a>
+            <a href="/events/london/ev4">
+                <img /> <h2>Event 4</h2>
+            </a>
+        </div>
     </div>
+    )
 }
 
-export default EventsPerCity;
+export default EventsInCity;
