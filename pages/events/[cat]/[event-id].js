@@ -7,29 +7,3 @@ const EventPage = () => {
 }
 
 export default EventPage;
-
-export async function getStaticPath() {
-    const { events_categories } = await import('/data/data.json');
-    const allPaths = events_categories.map(ev=> {
-        
-    })
-    return {
-        path: [
-            {
-                params: {
-                    cat: 'london',
-                },
-            },
-            {
-                params: {
-                    cat: 'san-fransisco',
-                },
-            },
-            {
-                params: {
-                    cat: 'barcelona',
-                },
-            },
-        ],
-    };
-}
