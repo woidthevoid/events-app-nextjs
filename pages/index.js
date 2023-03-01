@@ -2,10 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({data}) {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -17,17 +18,25 @@ export default function Home({data}) {
 
       <header>
         <nav className='nav-bar'>
-          <img />
-          <a href='/home' className='home-link'>Home</a>
-          <a href='/events' className='events-link'>Events</a>
-          <a href='/about-us' className='about-link'>About us</a>
+          <Link href={'/'} passHref>
+            <p>Home</p>
+          </Link>
+          <Link href={'/events'} passHref>
+            <p>Events</p>
+          </Link>
+          <Link href={'/about-us'} passHref>
+            <p>About us</p>
+          </Link>
         </nav>
       </header>
       <main className={styles.main}>
-        {data.map(ev => <a key={ev.id} href={`/events/${ev.id}`}> 
-        <Image width={200} height={300} alt={ev.title} src={ev.image}/>
-        <h2>{ev.title}</h2> 
-        <p>{ev.description}</p> </a>)}
+        {data.map(ev =>
+          <Link key={ev.id} href={`/events/${ev.id}`} passHref>
+            <Image width={200} height={300} alt={ev.title} src={ev.image} />
+            <h2>{ev.title}</h2>
+            <p>{ev.description}</p>
+          </Link>
+        )}
       </main>
 
       <footer className={styles.footer}>
@@ -38,12 +47,12 @@ export default function Home({data}) {
 }
 
 export async function getServerSideProps() {
-  const {events_categories} = await import('/data/data.json');
+  const { events_categories } = await import('/data/data.json');
 
   return {
-      props:{
-          data:events_categories,
+    props: {
+      data: events_categories,
 
-      },
+    },
   };
 }

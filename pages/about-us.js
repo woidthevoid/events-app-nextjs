@@ -1,13 +1,14 @@
 import React from "react";
 
 const AboutUs = () => {
-    return 
+    return (
         <div>
             <h1>About us</h1>
             <p>
-                Hello there
+                Hello there!
             </p>
         </div>
+    )
 }
 
 export default AboutUs;
