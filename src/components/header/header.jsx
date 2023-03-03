@@ -1,7 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 export const Header = () => {
-    return (
+  return (
     <header>
+      <div className="topNav">
+        <Image src={'/images/logo.png'} width={100} height={100} alt='logo' />
         <nav className='nav-bar'>
           <Link href={'/'} passHref>
             <p>Home</p>
@@ -13,6 +16,8 @@ export const Header = () => {
             <p>About us</p>
           </Link>
         </nav>
-      </header>
-    )
+      </div>
+      <h1>This is a mah pageee</h1>
+    </header>
+  )
 }
