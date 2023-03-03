@@ -1,5 +1,3 @@
-import { Footer } from "@/src/components/footer/footer";
-import { Header } from "@/src/components/header/header";
 import React from "react";
 
 const AboutUs = () => {
