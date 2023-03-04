@@ -6,18 +6,26 @@ export const Header = () => {
       <div className="topNav">
         <Image src={'/images/logo.png'} width={100} height={100} alt='logo' />
         <nav className='nav-bar'>
-          <Link href={'/'} passHref>
-            <p>Home</p>
-          </Link>
-          <Link href={'/events'} passHref>
-            <p>Events</p>
-          </Link>
-          <Link href={'/about-us'} passHref>
-            <p>About us</p>
-          </Link>
+          <ul>
+            <li>
+              <Link href={'/'} passHref>
+                <p>Home</p>
+              </Link>
+            </li>
+            <li>
+              <Link href={'/events'} passHref>
+                <p>Events</p>
+              </Link>
+            </li>
+            <li>
+              <Link href={'/about-us'} passHref>
+                <p>About us</p>
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
-      <h1>This is a mah pageee</h1>
+      <h1>Events near you</h1>
     </header>
   )
 }
