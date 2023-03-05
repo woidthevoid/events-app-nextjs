@@ -2,12 +2,14 @@ import React from 'react'
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 
-export const MainLayout = ({children}) => {
+export const MainLayout = ({ children }) => {
     return (
         <>
-        <Header/>
-            {children}
-        <Footer/>
+            <Header />
+            <main>
+                {children}
+            </main>
+            <Footer />
         </>
     )
 }
