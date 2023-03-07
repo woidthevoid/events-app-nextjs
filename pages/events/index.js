@@ -1,23 +1,13 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-const EventsPage = ({ data }) => {
+import AllEvents from "./events-page";
+
+const EventPage = ({ data }) => {
   return (
-  <div>
-    <h1>Events page</h1>
-    <div>
-      {data.map((ev) => (
-        <Link key={ev.id} href={`/events/${ev.id}`} passHref>
-          <h2>{ev.title}</h2>
-          <Image alt={ev.description} width={300} height={300} src={ev.image} />
-        </Link>
-      ))}
-    </div>
-  </div>
+    <AllEvents data={data}/>
   )
 }
 
-export default EventsPage;
+export default EventPage;
 
 export async function getStaticProps() {
   const { events_categories } = await import('/data/data.json');

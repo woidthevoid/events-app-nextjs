@@ -26,7 +26,7 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
-        <h1>Events near you</h1>
+        <p className="title">Events near you</p>
       </div>
     </header>
   )

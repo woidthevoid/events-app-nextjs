@@ -4,10 +4,12 @@ import Image from "next/image";
 const EventPage = ({ data }) => {
     return (
         <div>
-            <Image src={data.image} height={600} width={1000} alt={data.title} />
             <h1>{data.title}</h1>
+            <Image src={data.image} height={600} width={1000} alt={data.title} />
             <p>{data.description}</p>
-
+            <div className="submit_button">
+                <input type="email" /> <button>Submit</button>
+            </div>
         </div>
     )
 }
