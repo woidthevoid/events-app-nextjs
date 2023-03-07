@@ -1,16 +1,9 @@
+import { SingleEvent } from "@/src/components/events/single-event";
 import React from "react";
-import Image from "next/image";
 
 const EventPage = ({ data }) => {
     return (
-        <div>
-            <h1>{data.title}</h1>
-            <Image src={data.image} height={600} width={1000} alt={data.title} />
-            <p>{data.description}</p>
-            <div className="submit_button">
-                <input type="email" /> <button>Submit</button>
-            </div>
-        </div>
+       <SingleEvent data={data} />
     )
 }
 
