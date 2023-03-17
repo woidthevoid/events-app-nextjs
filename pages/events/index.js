@@ -1,5 +1,5 @@
 import React from "react";
-import AllEvents from "./events-page";
+import AllEvents from "@/src/components/events/events-page";
 
 const EventPage = ({ data }) => {
   return (
