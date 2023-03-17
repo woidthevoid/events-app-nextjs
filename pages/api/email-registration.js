@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 
 function buildPath() {
-    return path.join(process.cwd(), 'data', 'data.json');
+    return path.join('/tmp', process.cwd(), 'data', 'data.json');
 }
 
 function extractData(filePath) {
@@ -27,8 +27,8 @@ export default function handler(req, res) {
     if (method === 'POST') {
         const { email, eventId } = req.body;
 
-        if(!email | !email.includes('@')) {
-            res.status(422).json({message: 'Invalid email address'});
+        if (!email | !email.includes('@')) {
+            res.status(422).json({ message: 'Invalid email address' });
             return;
         }
 
@@ -44,7 +44,7 @@ export default function handler(req, res) {
             return ev;
         });
 
-        fs.writeFileSync(filePath, JSON.stringify({events_categories, allEvents: newAllEvents}));
+        fs.writeFileSync(filePath, JSON.stringify({ events_categories, allEvents: newAllEvents }));
 
         res.status(200).json({ message: `Registration succesful with email: ${email} ${eventId}` });
     }
